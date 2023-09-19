@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    showButton()
+    showButton();
   }, [])
   window.addEventListener('resize', showButton);
 
@@ -53,9 +53,12 @@ const Navbar = () => {
               Products
             </Link>
           </li>
+        {!button &&
+          <li>
             <Link to='/sign-up' className='nav-links' onClick={closeMobileMenu} >
               Sign Up
             </Link>
+          </li> }
         </ul>
         {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
       </nav>
